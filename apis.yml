@@ -1,7 +1,27 @@
 aid: ventura
 name: Ventura
-description: Ventura is a company surfaced as a portfolio company of y-combinator and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Ventura builds the AI workforce for distributors and manufacturers, starting
+  with quoting and order entry. It automates quoting and order entry for
+  distributors, helping sales teams turn emails, PDFs, and other purchase orders
+  into accurate quotes and orders in their ERP system. Ventura plugs into your
+  existing ERP, follows your SOPs, and learns your team's tribal knowledge -
+  getting smarter with every completed task. Ventura (formerly Autola) is a
+  Y Combinator Winter 2026 company based in San Francisco. As of this profile
+  the company publishes a marketing website and a privacy policy only; no public
+  API, developer portal, documentation, or SDKs were found during enrichment.
+accessModel:
+  pricing: unknown
+  onboarding: approval
+  trial: false
+  try_now: false
+  public: false
+  label: Requires approval
+  confidence: medium
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://bookface-images.s3.amazonaws.com/small_logos/da34d67bc7bfb583fad0d2c587e602fbe787b210.png
 url: https://raw.githubusercontent.com/api-evangelist/ventura/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +31,36 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Artificial Intelligence
+- AI Agents
+- Distributors
+- Manufacturers
+- Quoting
+- Order Entry
+- ERP
+- Industrials
+- Sales Automation
+- Y Combinator
 apis: []
+common:
+- type: DomainSecurity
+  url: security/ventura-domain-security.yml
+- type: Website
+  url: https://www.ventura.ai
+- type: PrivacyPolicy
+  url: https://www.ventura.ai/privacy-policy
+- type: LinkedIn
+  url: https://www.linkedin.com/company/getventura
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
