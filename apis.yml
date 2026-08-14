@@ -2,14 +2,19 @@ aid: ventura
 name: Ventura
 description: >-
   Ventura builds the AI workforce for distributors and manufacturers, starting
-  with quoting and order entry. It automates quoting and order entry for
-  distributors, helping sales teams turn emails, PDFs, and other purchase orders
-  into accurate quotes and orders in their ERP system. Ventura plugs into your
-  existing ERP, follows your SOPs, and learns your team's tribal knowledge -
-  getting smarter with every completed task. Ventura (formerly Autola) is a
-  Y Combinator Winter 2026 company based in San Francisco. As of this profile
-  the company publishes a marketing website and a privacy policy only; no public
-  API, developer portal, documentation, or SDKs were found during enrichment.
+  with quoting and order entry. It reads inbound requests in any format - emails,
+  PDFs, images, and phone calls - matches products against the customer's catalog,
+  drafts a quote or order for a sales rep to review and approve, and pushes the
+  approved result into the customer's ERP, with sales intelligence and a phone
+  agent that transcribes rep calls and creates the resulting quote or order.
+  Ventura plugs into the ERP and CRM a distributor already runs, follows the
+  team's documented procedures, and learns from every correction. Ventura
+  (formerly Autola) is operated by Gradient Ascent Labs, Inc., a Y Combinator
+  Winter 2026 company based in San Francisco founded by Swen Koller and Jack
+  Collins. As of 2026-08-14 the company publishes a marketing website and a
+  privacy policy only: no public API, developer portal, documentation, SDK,
+  OpenAPI, MCP server, or agent card was found on any Ventura host, and the
+  customer application at app.ventura.ai redirects every path to a login.
 accessModel:
   pricing: unknown
   onboarding: approval
@@ -31,7 +36,10 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-08-14'
+x-legal-entity: Gradient Ascent Labs, Inc.
+x-founded: '2025'
+x-headquarters: San Francisco, CA, United States
 tags:
 - Company
 - Artificial Intelligence
@@ -48,19 +56,56 @@ apis: []
 common:
 - type: DomainSecurity
   url: security/ventura-domain-security.yml
+- type: Conformance
+  url: conformance/ventura-conformance.yml
+- type: Compliance
+  url: conformance/ventura-conformance.yml
+- type: Plans
+  url: plans/ventura-plans-pricing.yml
+- type: LLMsTxt
+  url: llms/ventura-llms.txt
 - type: Website
   url: https://www.ventura.ai
 - type: PrivacyPolicy
   url: https://www.ventura.ai/privacy-policy
+- type: ContactPage
+  url: https://ventura.ai/#contact
+- type: Contact
+  url: mailto:support@ventura.ai
 - type: LinkedIn
   url: https://www.linkedin.com/company/getventura
+- type: Investors
+  url: https://www.ycombinator.com/companies/ventura
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 x-enrichment:
-  date: '2026-07-21'
+  date: '2026-08-14'
   status: minimal
-  artifacts_added: 1
+  artifacts_added: 4
   pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Ventura sells a hosted AI application that its own team wires into a customer's ERP
+    during onboarding, not a developer product: api.ventura.ai, docs.ventura.ai and
+    developer.ventura.ai do not resolve in DNS, the marketing site's sitemap lists only
+    the homepage and the privacy policy, and the customer app at app.ventura.ai
+    307-redirects every path - including every /.well-known/* path - to /authenticate.
+  evidence:
+  - url: https://ventura.ai/openapi.json
+    status: 404
+  - url: https://ventura.ai/.well-known/agent-card.json
+    status: 404
+  - url: https://ventura.ai/llms.txt
+    status: 404
+  - url: https://ventura.ai/sitemap.xml
+    status: 200
+  - url: https://app.ventura.ai/openapi.json
+    status: 307
+  - url: https://ventura.ai/pricing
+    status: 404
+  checked: '2026-08-14'
