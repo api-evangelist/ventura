@@ -42,6 +42,20 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Ventura is a company surfaced as a portfolio company of y-combinator and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Ventura (operated by Gradient Ascent Labs, Inc.) builds an AI workforce for industrial
+distributors and manufacturers, starting with quoting and order entry: it reads inbound
+emails, PDFs, images and phone calls, matches products against the customer's catalog,
+drafts a quote or order for a rep to review, and pushes the approved result into the
+customer's ERP.
+
+**No public API surface.** As of 2026-08-14 the enrichment pipeline found no developer
+portal, documentation, API reference, OpenAPI/AsyncAPI/GraphQL contract, MCP server,
+agent card, SDK, or `/.well-known/` discovery document on any Ventura host.
+`api.ventura.ai`, `docs.ventura.ai` and `developer.ventura.ai` do not resolve; the
+marketing site's sitemap lists only the homepage and the privacy policy; and the customer
+application at `app.ventura.ai` redirects every path to `/authenticate`. What is captured
+here is what the company publishes: a domain-security probe, a recorded `/.well-known/`
+absence, a self-asserted SOC 2 Type II compliance claim, and a contact-sales-only pricing
+posture. See `x-coverage` in `apis.yml`.
 
 Backed by: y-combinator

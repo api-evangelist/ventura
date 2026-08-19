@@ -1,0 +1,22 @@
+generated: '2026-08-14'
+method: searched
+source: https://ventura.ai/
+plan_count: 0
+public_pricing: false
+model: contact-sales
+note: >-
+  Ventura publishes no pricing page and no plans. ventura.ai/pricing returns 404 and the
+  sitemap lists only two URLs (the homepage and the privacy policy). The only commercial
+  path on the site is a "Get in touch" / "Request a demo" form promising a reply within
+  24 hours, with "Dedicated account manager" and "Custom integrations" named as part of
+  the engagement — i.e. an enterprise sales motion, not self-serve. An honest zero.
+plans: []
+evidence:
+- url: https://ventura.ai/pricing
+  status: 404
+- url: https://ventura.ai/sitemap.xml
+  status: 200
+  note: contains only https://ventura.ai and https://ventura.ai/privacy-policy
+- url: https://ventura.ai/
+  status: 200
+  note: contact form is the only commercial call to action

@@ -1,0 +1,32 @@
+generated: '2026-08-14'
+method: searched
+source: https://ventura.ai/
+note: >-
+  Ventura publishes no machine-readable contract, so nothing here is derived from a
+  spec. The single standard recorded is a compliance claim the company states verbatim
+  on its own public homepage.
+standards:
+- id: soc2-type-ii
+  conforms: true
+  claimed_by: provider
+  evidence: >-
+    Homepage, "Why Ventura" section: "Secure by design. Ventura is SOC 2 Type II
+    compliant. Your data is encrypted in transit and at rest, never used to train shared
+    models, and processed under strict access controls."
+  evidence_url: https://ventura.ai/
+  verified: false
+  verification_note: >-
+    Self-asserted on the marketing site. No trust center, no report request flow, and no
+    auditor named; trust.ventura.ai and security.ventura.ai do not resolve and
+    ventura.ai/security, /trust and /compliance all return 404.
+- id: oauth2
+  conforms: false
+  evidence: no public API, no securitySchemes, no OAuth surface found
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: no public API contract to evaluate
+- id: openapi
+  conforms: false
+  evidence: >-
+    No OpenAPI/Swagger found on any host after probing ventura.ai and app.ventura.ai for
+    /openapi.json, /openapi.yaml, /swagger.json, /v1/openapi.json, /api-docs and /docs

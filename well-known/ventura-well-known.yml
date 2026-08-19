@@ -1,0 +1,76 @@
+generated: '2026-08-14'
+method: probed
+source: live GET of /.well-known/* on every Ventura host
+note: >-
+  Nothing was served. The marketing host (ventura.ai / www.ventura.ai) is a Next.js
+  site that answers every unknown path with a client-rendered HTML 404 shell, and the
+  customer application host (app.ventura.ai) 307-redirects every path — including every
+  /.well-known/* path — to /authenticate. No discovery document of any kind exists, so
+  NO WellKnown or SecurityTxt pointer is emitted in apis.yml: this file records an
+  absence, not a presence.
+hosts:
+- host: https://ventura.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    content_type: text/html
+  - path: /.well-known/openid-configuration
+    status: 404
+    content_type: text/html
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    content_type: text/html
+  - path: /.well-known/api-catalog
+    status: 404
+    content_type: text/html
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/agent-card.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/agent.json
+    status: 404
+    content_type: text/html
+- host: https://app.ventura.ai
+  note: every path 307-redirects to /authenticate (gated customer application)
+  documents:
+  - path: /.well-known/security.txt
+    status: 307
+    location: /authenticate
+  - path: /.well-known/openid-configuration
+    status: 307
+    location: /authenticate
+  - path: /.well-known/oauth-authorization-server
+    status: 307
+    location: /authenticate
+  - path: /.well-known/api-catalog
+    status: 307
+    location: /authenticate
+  - path: /.well-known/ai-plugin.json
+    status: 307
+    location: /authenticate
+  - path: /.well-known/agent-card.json
+    status: 307
+    location: /authenticate
+  - path: /.well-known/agent.json
+    status: 307
+    location: /authenticate
+robots:
+  url: https://www.ventura.ai/robots.txt
+  status: 200
+  content_signal: search=yes,ai-train=no,use=reference
+  disallowed_ai_agents:
+  - Amazonbot
+  - Applebot-Extended
+  - Bytespider
+  - CCBot
+  - ClaudeBot
+  - CloudflareBrowserRenderingCrawler
+  - Google-Extended
+  - GPTBot
+  - meta-externalagent
+  note: >-
+    The Content-Signal block and the AI-crawler disallow list are Cloudflare's managed
+    robots.txt content, not a policy Ventura authored, so no ContentSignal/AIPREF pointer
+    is emitted. Recorded here as observed edge behavior only.
