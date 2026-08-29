@@ -15,6 +15,17 @@ description: >-
   privacy policy only: no public API, developer portal, documentation, SDK,
   OpenAPI, MCP server, or agent card was found on any Ventura host, and the
   customer application at app.ventura.ai redirects every path to a login.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: approval
